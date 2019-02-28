@@ -1,0 +1,20 @@
+.header {
+    font-family: Helvetica, sans-serif;
+    box-shadow: 0 0 4px rgba(0,0,0,0.12);
+    background-color: #96efc0;
+}
+
+.header__content {
+    box-sizing: border-box;
+    max-width: 960px;
+    padding: 15px;
+    margin: 0 auto;
+    height: 60px;
+}
+
+.header__logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}

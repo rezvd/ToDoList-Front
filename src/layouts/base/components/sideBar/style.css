@@ -1,0 +1,18 @@
+.side-bar {
+    width: 100%;
+}
+
+.side-bar__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 20px;
+}
+
+.menu__item {
+    font-size: 18px;
+    color: #979797;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    margin: 24px 0 0 0;
+    text-decoration: none;
+}
