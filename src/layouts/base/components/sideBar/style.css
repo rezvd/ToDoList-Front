@@ -8,11 +8,54 @@
     margin: 0 0 0 20px;
 }
 
-.menu__item {
+.menu__link {
+    display: block;
     font-size: 18px;
     color: #979797;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     margin: 24px 0 0 0;
     text-decoration: none;
+}
+
+.todo-item:before {
+    content: " ";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url("./images/todo.png") no-repeat;
+    padding-left: 6px;
+}
+
+.done-item:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url("./images/done.png") no-repeat;
+    padding-left: 6px;
+}
+
+.todo-item_active:before {
+    content: "";
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    background-image: url("./images/todo_selected.png");
+    padding-left: 6px;
+}
+
+.done-item_active:before {
+    content: "";
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    background: url("./images/done_selected.png") no-repeat;
+    padding-left: 6px;
+}
+
+.todo-item_active, .done-item_active {
+    font-size: 18px;
+    color: #78c2f5;
+    font-weight: 500;
 }
