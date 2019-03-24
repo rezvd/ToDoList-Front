@@ -1,0 +1,10 @@
+.button-mark-as-done {
+    background: url("./images/circle.png") 0 0;
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+}
+
+.button-mark-as-done:hover{
+    background-position: -14px 0;
+}

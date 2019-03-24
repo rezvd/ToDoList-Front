@@ -1,0 +1,10 @@
+.button-mark-as-todo {
+    background: url("./images/done.png");
+    width: 16px;
+    height: 12px;
+    display: inline-block;
+}
+
+.button-mark-as-todo:hover{
+
+}
