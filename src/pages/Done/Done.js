@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Task from '../../components/task/Task';
 import list from './list';
 import './style.css';
