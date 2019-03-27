@@ -12,13 +12,13 @@ export default class Task extends React.Component {
     return (
         <div className="task">
             <div className="task__left">
-                {this.props.status === "todo" ? (<ButtonMarkAsDone/>) : null}
-                {this.props.status === "done" ? (<ButtonMarkAsTodo/>) : null}
+                {this.props.status === "todo" ? (<ButtonMarkAsDone id={this.props.id}/>) : null}
+                {this.props.status === "done" ? (<ButtonMarkAsTodo id={this.props.id}/>) : null}
                 <p className={"task__name"}>{this.props.name}</p>
             </div>
             <div className="task__right">
-                {this.props.status === "todo" ? (<ButtonEdit/>) : null}
-                <ButtonDelete/>
+                {this.props.status === "todo" ? (<ButtonEdit id={this.props.id}/>) : null}
+                <ButtonDelete id={this.props.id}/>
             </div>
         </div>
     );
@@ -27,10 +27,12 @@ export default class Task extends React.Component {
 
 Task.propTypes = {
     name: PropTypes.string,
-    status: PropTypes.string
+    status: PropTypes.string,
+    id: PropTypes.number
 };
 
 Task.defaultProps = {
     name: '',
-    status: 'todo'
+    status: 'todo',
+    id: 1
 };

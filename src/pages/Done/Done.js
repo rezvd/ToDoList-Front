@@ -8,7 +8,7 @@ export default class Home extends React.Component {
   renderList = () => {
     return list.data.map((item, index) => {
       return (
-        <Task key={index} name={item.name} status="done"/>
+        <Task key={index} name={item.name} id={item.id} status="done"/>
       );
     });
   };
