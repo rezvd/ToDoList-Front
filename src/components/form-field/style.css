@@ -1,0 +1,14 @@
+.form-field {
+    background-color: #fff;
+    border: none;
+    border-bottom: 1.3px solid #45d3a8;
+    width: 400px;
+    height: 30px;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+}
+
+.form-field:focus {
+    outline: none;
+}

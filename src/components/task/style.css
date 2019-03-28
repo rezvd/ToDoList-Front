@@ -41,3 +41,8 @@
 .task:hover .task__right {
     visibility: visible;
 }
+
+
+.task__button-action {
+    margin: 0 0 0 20px;
+}

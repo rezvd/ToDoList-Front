@@ -9,16 +9,18 @@ export default class ButtonDelete extends React.Component {
 
     render() {
         return (
-            <div className="button-delete" onClick={this.handleClickOnButton}></div>
+            <div className={`button-delete ${this.props.className}`} onClick={this.handleClickOnButton}></div>
         );
     };
 };
 
 
 ButtonDelete.propTypes = {
-    id: PropTypes.number
+    id: PropTypes.number,
+    className: PropTypes.string
 };
 
 ButtonDelete.defaultProps = {
-    id: 1
+    id: 1,
+    className: ""
 };

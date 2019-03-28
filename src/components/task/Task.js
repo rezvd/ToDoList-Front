@@ -12,13 +12,13 @@ export default class Task extends React.Component {
     return (
         <div className="task">
             <div className="task__left">
-                {this.props.status === "todo" ? (<ButtonMarkAsDone id={this.props.id}/>) : null}
-                {this.props.status === "done" ? (<ButtonMarkAsTodo id={this.props.id}/>) : null}
+                {this.props.status === "todo" ? (<ButtonMarkAsDone id={this.props.id} className="task__button-change-status"/>) : null}
+                {this.props.status === "done" ? (<ButtonMarkAsTodo id={this.props.id} className="task__button-change-status"/>) : null}
                 <p className={"task__name"}>{this.props.name}</p>
             </div>
             <div className="task__right">
-                {this.props.status === "todo" ? (<ButtonEdit id={this.props.id}/>) : null}
-                <ButtonDelete id={this.props.id}/>
+                {this.props.status === "todo" ? (<ButtonEdit id={this.props.id} className="task__button-action"/>) : null}
+                <ButtonDelete id={this.props.id} className="task__button-action"/>
             </div>
         </div>
     );

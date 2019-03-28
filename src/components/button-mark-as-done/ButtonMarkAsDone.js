@@ -9,15 +9,17 @@ export default class ButtonMarkAsDone extends React.Component {
 
   render() {
     return (
-        <div className="button-mark-as-done" onClick={this.handleClickOnButton}></div>
+        <div className={`button-mark-as-done ${this.props.className}`} onClick={this.handleClickOnButton}></div>
     );
   };
 };
 
 ButtonMarkAsDone.propTypes = {
-    id: PropTypes.number
+    id: PropTypes.number,
+    className: PropTypes.string
 };
 
 ButtonMarkAsDone.defaultProps = {
-    id: 1
+    id: 1,
+    className: ""
 };
