@@ -2,14 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Task from '../../components/task/Task';
-import list from './list';
 import './style.css';
+import getDoneTasks from "../../actions/getDoneTasks";
+import {bindActionCreators} from "redux";
 
 class Done extends React.Component {
+
+    componentDidMount() {
+        this.props.getDoneTasks();
+    }
+
     renderList = () => {
-        return this.props.done.map((item, index) => {
+        return this.props.tasks.map((item) => {
             return (
-                <Task key={index} name={item.name} id={item.id} status="done"/>
+                <Task key={item.id} name={item.name} id={item.id} status="done"/>
             );
         });
     };
@@ -25,9 +31,12 @@ class Done extends React.Component {
 
 
 const mapStateToProps = (state) => ({
-    //done: state.doneListReducer.done,
-    done: list.data
+    tasks: state.tasksReducer.doneTasks
 });
 
-export default connect(mapStateToProps, null)(Done);
+const mapDispatchToProps = (dispatch) => ({
+    getDoneTasks: bindActionCreators(getDoneTasks, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Done);
 

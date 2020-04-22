@@ -1,28 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
 
 import Task from '../../components/task/Task';
-import list from './list';
 import './style.css';
 import FormField from '../../components/form-field/FormField'
 import FormButton from '../../components/form-button/FormButton'
+import getTodoTasks from "../../actions/getTodoTasks";
 
-//export default
 class Todo extends React.Component {
+    componentDidMount() {
+        this.props.getTodoTasks();
+    }
 
     constructor(props) {
         super(props);
         this.state = {
             value: '',
-            itemList: list.data,
-            id: list.data.length + 1
+            itemList: this.props.tasks,
+            id: this.props.tasks.length + 1
         };
     }
 
     renderList = () => {
-        return this.props.todos.map((item, index) => {
+        return this.props.tasks.map((item) => {
             return (
-                <Task key={index} name={item.name} id={item.id} status="todo"/>
+                <Task key={item.id} name={item.name} id={item.id} status="todo"/>
             );
         });
     };
@@ -36,15 +39,7 @@ class Todo extends React.Component {
     onSubmit = (event) => {
         event.preventDefault();
         this.setState({
-            itemList: [
-                {
-                    "id": this.state.id,
-                    "name": this.state.value
-                },
-                ...this.state.itemList
-            ],
-            value: '',
-            id: this.state.id + 1
+            value: ''
         })
     };
 
@@ -67,12 +62,15 @@ class Todo extends React.Component {
             </React.Fragment>
         );
     };
-};
+}
 
 const mapStateToProps = (state) => ({
-    //todos: state.todoListReducer.todos,
-    todos: list.data
+    tasks: state.tasksReducer.todoTasks
 });
 
-export default connect(mapStateToProps, null)(Todo);
+const mapDispatchToProps = (dispatch) => ({
+    getTodoTasks: bindActionCreators(getTodoTasks, dispatch)
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Todo);
 
