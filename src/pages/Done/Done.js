@@ -31,7 +31,7 @@ class Done extends React.Component {
 
 
 const mapStateToProps = (state) => ({
-    tasks: state.tasksReducer.doneTasks
+    tasks: state.tasksReducer.tasks
 });
 
 const mapDispatchToProps = (dispatch) => ({

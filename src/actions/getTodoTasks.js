@@ -4,16 +4,19 @@ import * as types from './actionTypes';
 
 export default function getTodoTasks() {
     return (dispatch) => {
-        return get('mockapi/getTodoTasks.json')
+        return get('mockapi/getTasks.json')
             .then(response => {
+                const tasks = response.data.filter((i) => {
+                    return i.status === 'todo';
+                });
                 dispatch({
-                    type: types.GET_TODO_TASKS_SUCCESS,
-                    tasks: response.data
+                    type: types.GET_TASKS_SUCCESS,
+                    tasks: tasks
                 });
             })
             .catch(error => {
                 dispatch({
-                    type: types.GET_TODO_TASKS_ERROR,
+                    type: types.GET_TASKS_ERROR,
                     error: error
                 });
             })

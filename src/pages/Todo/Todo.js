@@ -65,7 +65,7 @@ class Todo extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    tasks: state.tasksReducer.todoTasks
+    tasks: state.tasksReducer.tasks
 });
 
 const mapDispatchToProps = (dispatch) => ({
