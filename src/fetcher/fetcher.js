@@ -5,12 +5,18 @@ function checkStatus(response) {
     throw new Error(response.statusText)
 }
 
+function getToken() {
+    localStorage.setItem('jwt', 'eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJyZXp2LmRhcmlhQGdtYWlsLmNvbSIsImlhdCI6MTU4ODk3MDk3NCwic3ViIjoiYmZmYmQ3ZmQtOTdmOS00Y2NkLWI0MjctOWY3MTQzMDNjZGZhIiwiZXhwIjoxNTg4OTcyNzc0LCJhdXRob3JpdGllcyI6WyJVU0VSIl19.yQP2uyIg4uGFATiKs22L0WPULCJZ9Syjmx-jCTYPPlQZmBzS0_e93yKTQM6rVurnS0J0yDBp9tI_QyHNopLhEA');
+    return 'Bearer ' + localStorage.getItem('jwt');
+}
+
 export function get(url) {
     return fetch(url, {
         method: 'GET',
         headers: new Headers({
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': getToken()
         })
     })
         .then((response) => checkStatus(response))
@@ -25,7 +31,8 @@ export function post(url, body) {
         method: 'POST',
         headers: new Headers({
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': getToken()
         }),
         body: body
     })
@@ -41,7 +48,8 @@ export function remove(url) {
         method: 'DELETE',
         headers: new Headers({
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': getToken()
         })
     })
         .then((response) => checkStatus(response))
@@ -56,7 +64,8 @@ export function update(url, body) {
         method: 'PATCH',
         headers: new Headers({
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': getToken()
         }),
         body: body
     })
