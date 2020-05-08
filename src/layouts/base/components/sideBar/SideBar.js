@@ -14,8 +14,8 @@ export default class SideBar extends React.Component {
               <li className='menu__item'>
                   <NavLink
                       exact to={'/'}
-                      className={"menu__link todo-item"}
-                      activeClassName={'menu__link todo-item_active'}>
+                      className={"menu__link Inbox-item"}
+                      activeClassName={'menu__link Inbox-item_active'}>
                       To do
                   </NavLink>
               </li>

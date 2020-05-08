@@ -1,10 +1,10 @@
-.button-mark-as-todo {
+.button-mark-as-inbox {
     background: url("./images/done.png");
     width: 16px;
     height: 12px;
     display: inline-block;
 }
 
-.button-mark-as-todo:hover{
+.button-mark-as-inbox:hover{
     opacity: 0.5;
 }

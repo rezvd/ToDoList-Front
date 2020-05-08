@@ -25,7 +25,7 @@
     border: 0.25px solid #97e3cc;
 }
 
-.todo-icon:before {
+.Inbox-icon:before {
     content: "";
     width: 14px;
     height: 14px;

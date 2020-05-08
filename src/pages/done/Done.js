@@ -3,19 +3,20 @@ import { connect } from 'react-redux';
 
 import Task from '../../components/task/Task';
 import './style.css';
-import getDoneTasks from "../../actions/getDoneTasks";
+import getTasks from "../../actions/getTasks";
 import {bindActionCreators} from "redux";
+import PropTypes from "prop-types";
 
 class Done extends React.Component {
 
     componentDidMount() {
-        this.props.getDoneTasks();
+        this.props.getTasks('done');
     }
 
     renderList = () => {
         return this.props.tasks.map((item) => {
             return (
-                <Task key={item.id} name={item.name} id={item.id} status="done"/>
+                <Task key={item.id} name={item.text} id={item.id} status="done"/>
             );
         });
     };
@@ -27,6 +28,10 @@ class Done extends React.Component {
             </React.Fragment>
         );
     };
+}
+
+Done.propTypes = {
+    tasks: PropTypes.array
 };
 
 
@@ -35,7 +40,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    getDoneTasks: bindActionCreators(getDoneTasks, dispatch)
+    getTasks: bindActionCreators(getTasks, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Done);

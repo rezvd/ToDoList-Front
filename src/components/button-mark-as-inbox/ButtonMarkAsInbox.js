@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-export default class ButtonMarkAsDone extends React.Component {
+export default class ButtonMarkAsInbox extends React.Component {
 
   render() {
     return (
-        <div className={`button-mark-as-done ${this.props.className}`} onClick={this.props.onClick}></div>
+        <div className={`button-mark-as-inbox ${this.props.className}`} onClick={this.props.onClick}></div>
     );
   };
 };
 
-ButtonMarkAsDone.propTypes = {
+ButtonMarkAsInbox.propTypes = {
     id: PropTypes.string,
     className: PropTypes.string,
     onClick: PropTypes.func
 };
 
-ButtonMarkAsDone.defaultProps = {
+ButtonMarkAsInbox.defaultProps = {
     id: 1,
     className: "",
     onClick: () => {}

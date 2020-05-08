@@ -22,6 +22,42 @@ export default (state = initialState, action) => {
                 error: action.error
             }
         }
+        case types.CREATE_TASK_SUCCESS: {
+            return {
+                ...state,
+                error: null
+            }
+        }
+        case types.CREATE_TASK_ERROR: {
+            return {
+                ...state,
+                error: action.error
+            }
+        }
+        case types.DELETE_TASK_SUCCESS: {
+            return {
+                ...state,
+                error: null
+            }
+        }
+        case types.DELETE_TASK_ERROR: {
+            return {
+                ...state,
+                error: action.error
+            }
+        }
+        case types.UPDATE_TASK_SUCCESS: {
+            return {
+                ...state,
+                error: null
+            }
+        }
+        case types.UPDATE_TASK_ERROR: {
+            return {
+                ...state,
+                error: action.error
+            }
+        }
         default: {
             return state;
         }

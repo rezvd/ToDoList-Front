@@ -10,12 +10,59 @@ export function get(url) {
         method: 'GET',
         headers: new Headers({
             'Accept': 'application/json',
-            'Content-Type': "application/json'"
+            'Content-Type': 'application/json'
         })
     })
         .then((response) => checkStatus(response))
         .then((response) => response.json())
         .catch((error) => {
             return error;
+        })
+}
+
+export function post(url, body) {
+    return fetch(url, {
+        method: 'POST',
+        headers: new Headers({
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }),
+        body: body
+    })
+        .then((response) => checkStatus(response))
+        .then((response) => response.json())
+        .catch((error) => {
+            return error;
         });
+}
+
+export function remove(url) {
+    return fetch(url, {
+        method: 'DELETE',
+        headers: new Headers({
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        })
+    })
+        .then((response) => checkStatus(response))
+        .then((response) => response.json())
+        .catch((error) => {
+            return error;
+        })
+}
+
+export function update(url, body) {
+    return fetch(url, {
+        method: 'PATCH',
+        headers: new Headers({
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }),
+        body: body
+    })
+        .then((response) => checkStatus(response))
+        .then((response) => response.json())
+        .catch((error) => {
+            return error;
+        })
 }

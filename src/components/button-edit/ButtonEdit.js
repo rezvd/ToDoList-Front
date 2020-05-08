@@ -16,7 +16,7 @@ export default class ButtonEdit extends React.Component {
 
 
 ButtonEdit.propTypes = {
-    id: PropTypes.number,
+    id: PropTypes.string,
     className: PropTypes.string
 };
 

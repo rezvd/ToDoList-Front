@@ -5,22 +5,22 @@ import './style.css';
 
 export default class ButtonDelete extends React.Component {
 
-    handleClickOnButton = () => alert("Delete: " + this.props.id);
-
     render() {
         return (
-            <div className={`button-delete ${this.props.className}`} onClick={this.handleClickOnButton}></div>
+            <div className={`button-delete ${this.props.className}`} onClick={this.props.onClick}></div>
         );
     };
 };
 
 
 ButtonDelete.propTypes = {
-    id: PropTypes.number,
-    className: PropTypes.string
+    id: PropTypes.string,
+    className: PropTypes.string,
+    onClick: PropTypes.func
 };
 
 ButtonDelete.defaultProps = {
     id: 1,
-    className: ""
+    className: "",
+    onClick: ()=>{}
 };

@@ -24,7 +24,7 @@
     color: #848484;
 }
 
-.todo-item:before {
+.Inbox-item:before {
     content: " ";
     width: 21px;
     height: 21px;
@@ -42,7 +42,7 @@
     margin-right: 6px;
 }
 
-.todo-item_active:before {
+.Inbox-item_active:before {
     content: "";
     width: 21px;
     height: 21px;
@@ -60,13 +60,13 @@
     margin-right: 6px;
 }
 
-.todo-item_active, .done-item_active {
+.Inbox-item_active, .done-item_active {
     font-size: 18px;
     color: #78c2f5;
     font-weight: 500;
 }
 
 
-.todo-item_active:hover, .done-item_active:hover {
+.Inbox-item_active:hover, .done-item_active:hover {
     color: #78c2f5;
 }
