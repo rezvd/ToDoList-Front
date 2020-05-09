@@ -6,7 +6,7 @@ function checkStatus(response) {
 }
 
 function getToken() {
-    localStorage.setItem('jwt', 'eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJyZXp2LmRhcmlhQGdtYWlsLmNvbSIsImlhdCI6MTU4OTAxNDc5Mywic3ViIjoiMjJiYTNiYWYtZjE1ZC00MDlhLWJjMmMtMTYyNDJkYjRiZDA4IiwiZXhwIjoxNTg5MDE2NTkzLCJhdXRob3JpdGllcyI6WyJBRE1JTiIsIlVTRVIiXX0.AFwPwCEakWOvA3hmuF6_UWGjvFf2uSze6i8vuCZJ2BTga7o5wdOZ4PDqfaqMnNaNaLHVEYYC2yq4keSFosKEHg');
+    localStorage.setItem('jwt', 'eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJyZXp2LmRhcmlhQGdtYWlsLmNvbSIsImlhdCI6MTU4OTAyMTcyNSwic3ViIjoiMjJiYTNiYWYtZjE1ZC00MDlhLWJjMmMtMTYyNDJkYjRiZDA4IiwiZXhwIjoxNTg5MDIzNTI1LCJhdXRob3JpdGllcyI6WyJBRE1JTiIsIlVTRVIiXX0.Ujxyt5W9C9b5JIxZGGYTIpgvtwvwhwmAjnP4NQ17twbq8-42zuetMKG5AhpVsVg4mde05K0SnAPZkF-lVnBvzw');
     return 'Bearer ' + localStorage.getItem('jwt');
 }
 

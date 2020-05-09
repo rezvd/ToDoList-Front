@@ -4,7 +4,9 @@ import * as types from './actionTypes';
 import getTasks from "./getTasks";
 
 export default function updateTask(id, newStatus, statusToView) {
-    let url = new URL(id, 'http://localhost:8080/tasks/');
+    console.log(process.env.REACT_APP_URL)
+    console.log(process.env.NODE_ENV)
+    let url = new URL(id, process.env.REACT_APP_URL + '/');
     let body = {"status": newStatus};
     return (dispatch) => {
         return update(url, JSON.stringify(body))

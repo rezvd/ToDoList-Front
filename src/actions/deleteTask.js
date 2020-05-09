@@ -4,7 +4,7 @@ import * as types from './actionTypes';
 import getTasks from "./getTasks";
 
 export default function deleteTask(id, status) {
-    let url = new URL(id, 'http://localhost:8080/tasks/');
+    let url = new URL(id, process.env.REACT_APP_URL + '/');
     return (dispatch) => {
         return remove(url)
             .then(() => {

@@ -1,13 +1,16 @@
-import { get } from '../fetcher/fetcher';
 
+import { get } from '../fetcher/fetcher';
 import * as types from './actionTypes';
+import * as fields from './fieldNames';
+
+
 
 export default function getTasks(status, order, page, size) {
-    let url = new URL('http://localhost:8080/tasks');
-    url.searchParams.append('status', status);
-    if (order !== undefined) url.searchParams.append('order', order);
-    if (page !== undefined) url.searchParams.append('page', page);
-    if (size !== undefined) url.searchParams.append('size', size);
+    let url = new URL(process.env.REACT_APP_URL);
+    url.searchParams.append(fields.STATUS, status);
+    if (order !== undefined) url.searchParams.append(fields.ORDER, order);
+    if (page !== undefined) url.searchParams.append(fields.PAGE, page);
+    if (size !== undefined) url.searchParams.append(fields.PAGE_SIZE, size);
     return (dispatch) => {
         return get(url)
             .then(response => {

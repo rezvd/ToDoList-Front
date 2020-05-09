@@ -44,9 +44,9 @@ class Inbox extends React.Component {
     };
 
     renderList = () => {
-        return this.props.tasks.map((item, i) => {
+        return this.props.tasks.map((item) => {
             return (
-                <Task key={i} name={item.text} id={item.id} status="inbox"/>
+                <Task key={item.id} name={item.text} id={item.id} status="inbox"/>
             );
         });
     };
