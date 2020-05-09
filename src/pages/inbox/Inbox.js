@@ -36,6 +36,7 @@ class Inbox extends React.Component {
     onSubmit = (event) => {
         event.preventDefault();
         this.props.createTask(this.state.value)
+            .then()
         this.setState({
             value: ''
         })
@@ -72,7 +73,9 @@ class Inbox extends React.Component {
 }
 
 Inbox.propTypes = {
-    tasks: PropTypes.array
+    tasks: PropTypes.array,
+    getTasks: PropTypes.func,
+    createTask: PropTypes.func
 };
 
 const mapStateToProps = (state) => ({

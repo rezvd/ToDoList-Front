@@ -14,14 +14,14 @@ import updateTask from "../../actions/updateTask";
 class Task extends React.Component {
 
     handleDeleteClick() {
-        this.props.deleteTask(this.props.id);
+        this.props.deleteTask(this.props.id, this.props.status);
     }
 
     handleChangeStatusClick() {
         if (this.props.status === "inbox")
-            this.props.updateTasks(this.props.id, 'done');
+            this.props.updateTasks(this.props.id, 'done', this.props.status);
         if (this.props.status === "done")
-            this.props.updateTasks(this.props.id, 'inbox');
+            this.props.updateTasks(this.props.id, 'inbox', this.props.status);
     }
 
     render() {

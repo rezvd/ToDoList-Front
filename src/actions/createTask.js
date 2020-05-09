@@ -1,6 +1,7 @@
 import { post } from '../fetcher/fetcher';
 
 import * as types from './actionTypes';
+import getTasks from "./getTasks";
 
 export default function createTask(text) {
     let url = new URL('http://localhost:8080/tasks');
@@ -12,6 +13,7 @@ export default function createTask(text) {
                     type: types.CREATE_TASK_SUCCESS,
                 });
             })
+            .then(() => dispatch(getTasks('inbox')))
             .catch(error => {
                 dispatch({
                     type: types.CREATE_TASK_ERROR,
@@ -20,3 +22,5 @@ export default function createTask(text) {
             })
     }
 }
+
+//window.location.href

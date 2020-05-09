@@ -31,7 +31,9 @@ class Done extends React.Component {
 }
 
 Done.propTypes = {
-    tasks: PropTypes.array
+    tasks: PropTypes.array,
+    getTasks: PropTypes.func,
+    createTask: PropTypes.func
 };
 
 

@@ -6,7 +6,7 @@ function checkStatus(response) {
 }
 
 function getToken() {
-    localStorage.setItem('jwt', 'eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJyZXp2LmRhcmlhQGdtYWlsLmNvbSIsImlhdCI6MTU4ODk3MDk3NCwic3ViIjoiYmZmYmQ3ZmQtOTdmOS00Y2NkLWI0MjctOWY3MTQzMDNjZGZhIiwiZXhwIjoxNTg4OTcyNzc0LCJhdXRob3JpdGllcyI6WyJVU0VSIl19.yQP2uyIg4uGFATiKs22L0WPULCJZ9Syjmx-jCTYPPlQZmBzS0_e93yKTQM6rVurnS0J0yDBp9tI_QyHNopLhEA');
+    localStorage.setItem('jwt', 'eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJyZXp2LmRhcmlhQGdtYWlsLmNvbSIsImlhdCI6MTU4OTAxNDc5Mywic3ViIjoiMjJiYTNiYWYtZjE1ZC00MDlhLWJjMmMtMTYyNDJkYjRiZDA4IiwiZXhwIjoxNTg5MDE2NTkzLCJhdXRob3JpdGllcyI6WyJBRE1JTiIsIlVTRVIiXX0.AFwPwCEakWOvA3hmuF6_UWGjvFf2uSze6i8vuCZJ2BTga7o5wdOZ4PDqfaqMnNaNaLHVEYYC2yq4keSFosKEHg');
     return 'Bearer ' + localStorage.getItem('jwt');
 }
 
