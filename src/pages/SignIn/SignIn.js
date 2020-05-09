@@ -1,0 +1,132 @@
+import React from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from "redux";
+import FormField from '../../components/form-field/FormField';
+import FormButton from '../../components/form-button/FormButton';
+import img from './images/login_logo.png';
+import './style.css';
+import PropTypes from "prop-types";
+import signIn from "../../actions/users/signIn";
+
+class SignIn extends React.Component {
+
+    componentDidMount() {
+        if (this.props.authorized) {
+            this.props.history.replace('/')
+        }
+    }
+
+    componentDidUpdate() {
+        if (this.props.authorized) {
+            this.props.history.replace('/')
+        }
+    }
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: {
+                value: '',
+                status: 'neutral'
+            },
+            password: {
+                value: '',
+                status: 'neutral'
+            },
+        };
+    }
+
+    isEmailValid(email = this.state.email.value) {
+        //let pattern = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+        //return pattern.test(email);
+        return email.length >= 3;
+    }
+
+    isPasswordValid(password = this.state.password.value) {
+        return password.length >= 6;
+    }
+
+    onChangeEmail = (event) => {
+        let status = this.isEmailValid(event.target.value) ? "valid" : "invalid";
+        this.setState({
+            email: {
+                status: status,
+                value: event.target.value
+            }
+        });
+    };
+
+    onChangePassword = (event) => {
+        let status = this.isPasswordValid(event.target.value) ? "valid" : "invalid";
+        this.setState({
+            password: {
+                status: status,
+                value: event.target.value
+            }
+        });
+    };
+
+    onSubmit = (event) => {
+        event.preventDefault();
+        this.props.signin(this.state.email.value, this.state.password.value);
+        this.setState({
+            email: {
+                value: '',
+                status: 'neutral'
+            },
+            password: {
+                value: '',
+                status: 'neutral'
+            }
+        });
+    };
+
+
+    render() {
+        return (
+            <React.Fragment>
+                <div className='logo'>
+                    <img src={img} alt="Eise tasks"/>
+                </div>
+                <form
+                    className="form-login"
+                    onSubmit={this.onSubmit}>
+                    <FormField value={this.state.email.value}
+                               type="text"
+                               className={`login__field ${this.state.email.status}`}
+                               placeholder="E-mail"
+                               onChange={this.onChangeEmail}/>
+                    <FormField value={this.state.password.value}
+                               type="password"
+                               className={`login__field  ${this.state.password.status}`}
+                               placeholder="Password"
+                               onChange={this.onChangePassword}/>
+                    <FormButton className="login__button"
+                                type="submit"
+                                value="Log in"
+                                disabled={!this.isPasswordValid() || !this.isEmailValid()}/>
+                </form>
+                <div className="another-action">
+                    <p className="another-action__text">Don’t have an account?</p>
+                    <a href='/signin' className="another-action__link">Sign up</a>
+                </div>
+            </React.Fragment>
+        );
+    };
+}
+
+SignIn.propTypes = {
+    signin: PropTypes.func,
+    authorized: PropTypes.bool
+};
+
+const mapStateToProps = (state) => ({
+    authorized: state.usersReducer.authorized
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    signin: bindActionCreators(signIn, dispatch)
+
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

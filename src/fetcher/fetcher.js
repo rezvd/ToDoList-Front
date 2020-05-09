@@ -6,7 +6,6 @@ function checkStatus(response) {
 }
 
 function getToken() {
-    localStorage.setItem('jwt', 'eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJyZXp2LmRhcmlhQGdtYWlsLmNvbSIsImlhdCI6MTU4OTAyMTcyNSwic3ViIjoiMjJiYTNiYWYtZjE1ZC00MDlhLWJjMmMtMTYyNDJkYjRiZDA4IiwiZXhwIjoxNTg5MDIzNTI1LCJhdXRob3JpdGllcyI6WyJBRE1JTiIsIlVTRVIiXX0.Ujxyt5W9C9b5JIxZGGYTIpgvtwvwhwmAjnP4NQ17twbq8-42zuetMKG5AhpVsVg4mde05K0SnAPZkF-lVnBvzw');
     return 'Bearer ' + localStorage.getItem('jwt');
 }
 
@@ -23,7 +22,7 @@ export function get(url) {
         .then((response) => response.json())
         .catch((error) => {
             return error;
-        })
+        });
 }
 
 export function post(url, body) {
@@ -56,7 +55,7 @@ export function remove(url) {
         .then((response) => response.json())
         .catch((error) => {
             return error;
-        })
+        });
 }
 
 export function update(url, body) {

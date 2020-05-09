@@ -1,7 +1,7 @@
 .form-field {
     background-color: #fff;
     border: none;
-    border-bottom: 1.3px solid #45d3a8;
+    border-bottom: 1px solid #45d3a8;
     width: 400px;
     height: 30px;
     font-size: 15px;
@@ -12,3 +12,4 @@
 .form-field:focus {
     outline: none;
 }
+

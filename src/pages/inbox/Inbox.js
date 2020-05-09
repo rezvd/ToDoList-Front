@@ -6,15 +6,12 @@ import Task from '../../components/task/Task';
 import './style.css';
 import FormField from '../../components/form-field/FormField';
 import FormButton from '../../components/form-button/FormButton';
-import getTasks from "../../actions/getTasks";
-import createTask from "../../actions/createTask";
+import getTasks from "../../actions/tasks/getTasks";
+import createTask from "../../actions/tasks/createTask";
 import PropTypes from "prop-types";
+import whoami from "../../actions/users/whoami";
 
 class Inbox extends React.Component {
-
-    componentDidMount() {
-        this.update();
-    }
 
     constructor(props) {
         super(props);
@@ -23,8 +20,21 @@ class Inbox extends React.Component {
         };
     }
 
-    update() {
+    componentDidMount() {
+        this.checkAuth();
+        this.props.whoami();
         this.props.getTasks("inbox");
+    }
+
+    componentDidUpdate() {
+        this.checkAuth();
+    }
+
+    checkAuth() {
+        console.log("authorized: " + this.props.authorized)
+        if (!this.props.authorized) {
+            this.props.history.replace('/signin')
+        }
     }
 
     onChange = (event) => {
@@ -36,11 +46,9 @@ class Inbox extends React.Component {
     onSubmit = (event) => {
         event.preventDefault();
         this.props.createTask(this.state.value)
-            .then()
         this.setState({
             value: ''
         })
-        this.update();
     };
 
     renderList = () => {
@@ -75,16 +83,20 @@ class Inbox extends React.Component {
 Inbox.propTypes = {
     tasks: PropTypes.array,
     getTasks: PropTypes.func,
-    createTask: PropTypes.func
+    createTask: PropTypes.func,
+    whoami: PropTypes.func,
+    authorized: PropTypes.bool
 };
 
 const mapStateToProps = (state) => ({
-    tasks: state.tasksReducer.tasks
+    tasks: state.tasksReducer.tasks,
+    authorized: state.usersReducer.authorized
 });
 
 const mapDispatchToProps = (dispatch) => ({
     getTasks: bindActionCreators(getTasks, dispatch),
-    createTask: bindActionCreators(createTask, dispatch)
+    createTask: bindActionCreators(createTask, dispatch),
+    whoami: bindActionCreators(whoami, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Inbox);

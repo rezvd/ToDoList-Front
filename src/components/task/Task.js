@@ -8,8 +8,8 @@ import ButtonEdit from "../button-edit/ButtonEdit";
 import './style.css';
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
-import deleteTask from "../../actions/deleteTask";
-import updateTask from "../../actions/updateTask";
+import deleteTask from "../../actions/tasks/deleteTask";
+import updateTask from "../../actions/tasks/updateTask";
 
 class Task extends React.Component {
 

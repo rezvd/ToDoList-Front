@@ -17,12 +17,3 @@
 .form-button:enabled:hover{
     background-color: #3fc19f;
 }
-
-.form-button:before{
-    content: "";
-    width: 13px;
-    height: 13px;
-    background: url("./images/create.png");
-    display: inline-block;
-    margin-right: 5px;
-}
