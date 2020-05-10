@@ -20,9 +20,6 @@ export function get(url) {
     })
         .then((response) => checkStatus(response))
         .then((response) => response.json())
-        .catch((error) => {
-            return error;
-        });
 }
 
 export function post(url, body) {
@@ -37,9 +34,6 @@ export function post(url, body) {
     })
         .then((response) => checkStatus(response))
         .then((response) => response.json())
-        .catch((error) => {
-            return error;
-        });
 }
 
 export function remove(url) {
@@ -52,10 +46,6 @@ export function remove(url) {
         })
     })
         .then((response) => checkStatus(response))
-        .then((response) => response.json())
-        .catch((error) => {
-            return error;
-        });
 }
 
 export function update(url, body) {
@@ -69,8 +59,4 @@ export function update(url, body) {
         body: body
     })
         .then((response) => checkStatus(response))
-        .then((response) => response.json())
-        .catch((error) => {
-            return error;
-        })
 }

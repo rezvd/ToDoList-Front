@@ -31,7 +31,6 @@ class Inbox extends React.Component {
     }
 
     checkAuth() {
-        console.log("authorized: " + this.props.authorized)
         if (!this.props.authorized) {
             this.props.history.replace('/signin')
         }

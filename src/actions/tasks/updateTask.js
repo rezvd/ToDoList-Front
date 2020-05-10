@@ -2,9 +2,10 @@ import { update } from '../../fetcher/fetcher';
 
 import * as types from '../actionTypes';
 import getTasks from "./getTasks";
+import * as paths from "../paths";
 
 export default function updateTask(id, newStatus, statusToView) {
-    let url = new URL(id, process.env.REACT_APP_URL_TASKS + '/');
+    let url = new URL(id, process.env.REACT_APP_URL + paths.TASKS + '/');
     let body = {"status": newStatus};
     return (dispatch) => {
         return update(url, JSON.stringify(body))

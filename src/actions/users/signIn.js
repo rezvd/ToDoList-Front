@@ -1,9 +1,10 @@
 
 import { post } from '../../fetcher/fetcher';
 import * as types from '../actionTypes';
+import * as paths from "../paths";
 
 export default function signIn(username, password) {
-    let url = new URL(process.env.REACT_APP_URL_SIGN_IN);
+    let url = new URL(process.env.REACT_APP_URL + paths.SIGNIN);
     let data = {
         username: username,
         password: password

@@ -2,9 +2,10 @@ import { post } from '../../fetcher/fetcher';
 
 import * as types from '../actionTypes';
 import getTasks from "./getTasks";
+import * as paths from "../paths"
 
 export default function createTask(text) {
-    let url = new URL(process.env.REACT_APP_URL_TASKS);
+    let url = new URL(process.env.REACT_APP_URL + paths.TASKS);
     let body = {"text": text};
     return (dispatch) => {
         return post(url, JSON.stringify(body))
