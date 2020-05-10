@@ -7,7 +7,8 @@ import Base from './layouts/base/Base';
 import LoginLayout from './layouts/loginLayout/LoginLayout';
 import Inbox from './pages/inbox/Inbox';
 import Done from './pages/done/Done';
-import SignIn from "./pages/SignIn/SignIn";
+import SignIn from "./pages/signIn/SignIn";
+import SignUp from "./pages/signUp/SignUp";
 import store from './store/store';
 
 import './index.css';
@@ -24,7 +25,12 @@ ReactDOM.render(
             <Switch>
                 <Route path="/signin" render={() => (
                     <LoginLayout>
-                        <Route path="/signin" component={SignIn}/>
+                        <Route component={SignIn}/>
+                    </LoginLayout>
+                )}/>
+                <Route path="/signup" render={() => (
+                    <LoginLayout>
+                        <Route component={SignUp}/>
                     </LoginLayout>
                 )}/>
                 <Route path="/" render={() => (

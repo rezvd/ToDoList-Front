@@ -13,3 +13,14 @@
     outline: none;
 }
 
+.neutral {
+    border-bottom: 1px solid #626262;
+}
+
+.valid {
+    border-bottom: 1px solid #43CDA3;
+}
+
+.invalid {
+    border-bottom: 1px solid #FD5A6F;
+}

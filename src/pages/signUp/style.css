@@ -5,30 +5,18 @@
     display: block;
 }
 
-.form-login {
+.form-signup {
     margin: 0;
 }
 
-.login__field {
+.signup__field {
     width: 300px;
     display: block;
     margin: 39px 0 0 0;
 }
 
-.neutral {
-    border-bottom: 1px solid #626262;
-}
-
-.valid {
-    border-bottom: 1px solid #43CDA3;
-}
-
-.invalid {
-    border-bottom: 1px solid #FD5A6F;
-}
-
-.login__button {
-    margin: 55px 0 0 0;
+.signup__button {
+    margin-top: 23px;
     width: 300px;
     height: 40px;
 }
@@ -50,7 +38,6 @@
 }
 
 .another-action__link {
-    width: 100%;
     display: block;
     margin: 3px auto 0;
     text-decoration: none;
@@ -59,9 +46,13 @@
     font-weight: 500;
     font-size: 13px;
     color: #626262;
+    width: 45px;
 }
 
 .another-action__link:hover {
     color: #535353;
 }
 
+.signup__checkbox {
+    margin-top: 18px;
+}

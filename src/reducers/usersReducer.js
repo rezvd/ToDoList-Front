@@ -24,6 +24,21 @@ export default (state = initialState, action) => {
                 error: action.error
             }
         }
+        case types.SIGN_UP_SUCCESS: {
+            return {
+                ...state,
+                authorized: true,
+                error: null
+            };
+        }
+        case types.SIGN_UP_ERROR: {
+            return {
+                ...state,
+                authorized: false,
+                username: null,
+                error: action.error
+            }
+        }
         case types.AUTHENTICATE_SUCCESS: {
             return {
                 ...state,
