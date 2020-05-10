@@ -46,8 +46,7 @@ class SignIn extends React.Component {
         return password.length >= 6;
     }
 
-    onChangeEmail = (event) => {
-        let status = this.isEmailValid(event.target.value) ? "valid" : "invalid";
+    onChangeEmail = (event, status = 'neutral') => {
         this.setState({
             email: {
                 status: status,
@@ -56,8 +55,12 @@ class SignIn extends React.Component {
         });
     };
 
-    onChangePassword = (event) => {
-        let status = this.isPasswordValid(event.target.value) ? "valid" : "invalid";
+    onBlurEmail = (event) => {
+        let status = this.isEmailValid(event.target.value) ? "valid" : "invalid";
+        this.onChangeEmail(event, status)
+    };
+
+    onChangePassword = (event, status = 'neutral') => {
         this.setState({
             password: {
                 status: status,
@@ -65,6 +68,11 @@ class SignIn extends React.Component {
             }
         });
     };
+
+    onBlurPassword = (event) => {
+        let status = this.isPasswordValid(event.target.value) ? "valid" : "invalid";
+        this.onChangePassword(event, status)
+    }
 
     onSubmit = (event) => {
         event.preventDefault();
@@ -81,7 +89,6 @@ class SignIn extends React.Component {
         });
     };
 
-
     render() {
         return (
             <React.Fragment>
@@ -95,12 +102,14 @@ class SignIn extends React.Component {
                                type="text"
                                className={`login__field ${this.state.email.status}`}
                                placeholder="E-mail"
-                               onChange={this.onChangeEmail}/>
+                               onChange={this.onChangeEmail}
+                               onBlur={this.onBlurEmail}/>
                     <FormField value={this.state.password.value}
                                type="password"
                                className={`login__field  ${this.state.password.status}`}
                                placeholder="Password"
-                               onChange={this.onChangePassword}/>
+                               onChange={this.onChangePassword}
+                               onBlur={this.onBlurPassword}/>
                     <FormButton className="login__button"
                                 type="submit"
                                 value="Log in"

@@ -5,7 +5,7 @@ import './style.css';
 
 export default class FormField extends React.Component {
     render() {
-        const {className, value, type, name, placeholder, onChange } = this.props;
+        const {className, value, type, name, placeholder, onChange, onBlur } = this.props;
 
         return (
             <input
@@ -15,6 +15,8 @@ export default class FormField extends React.Component {
                 name={name}
                 placeholder={placeholder}
                 onChange={onChange}
+                onFocus={onChange}
+                onBlur={onBlur}
             />
         );
     };
@@ -26,7 +28,8 @@ FormField.propTypes = {
     type: PropTypes.string,
     name: PropTypes.string,
     placeholder: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    onBlur: PropTypes.func
 };
 
 FormField.defaultProps = {
@@ -34,5 +37,6 @@ FormField.defaultProps = {
     type: "text",
     name: "",
     placeholder: "Write here",
-    onChange: ()=>{}
+    onChange: ()=>{},
+    onBlur: ()=>{}
 };
