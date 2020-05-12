@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom'
+import { I18n } from "react-redux-i18n"
 
 import './style.css';
 
@@ -16,7 +17,7 @@ export default class SideBar extends React.Component {
                       exact to={'/'}
                       className={"menu__link Inbox-item"}
                       activeClassName={'menu__link Inbox-item_active'}>
-                      To do
+                      {I18n.t('sidebar.todo')}
                   </NavLink>
               </li>
               <li className='menu__item'>

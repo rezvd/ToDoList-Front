@@ -1,11 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from "redux";
+import { bindActionCreators } from "redux";
+import PropTypes from "prop-types";
+import { I18n } from "react-redux-i18n";
+import { history as historyPropTypes } from 'history-prop-types';
+
 import FormField from '../../components/form-field/FormField';
 import FormButton from '../../components/form-button/FormButton';
 import img from './images/login_logo.png';
 import './style.css';
-import PropTypes from "prop-types";
 import signIn from "../../actions/users/signIn";
 
 class SignIn extends React.Component {
@@ -115,23 +118,23 @@ class SignIn extends React.Component {
                     <FormField value={this.state.email.value}
                                type="text"
                                className={`login__field ${this.state.email.status}`}
-                               placeholder="E-mail"
+                               placeholder={I18n.t('form.email')}
                                onChange={this.onChangeEmail}
                                onBlur={this.onBlurEmail}/>
                     <FormField value={this.state.password.value}
                                type="password"
                                className={`login__field  ${this.state.password.status}`}
-                               placeholder="Password"
+                               placeholder={I18n.t('form.password')}
                                onChange={this.onChangePassword}
                                onBlur={this.onBlurPassword}/>
                     <FormButton className="login__button"
                                 type="submit"
-                                value="Log in"
+                                value={I18n.t('signin.button')}
                                 disabled={!this.isPasswordValid() || !this.isEmailValid()}/>
                 </form>
                 <div className="another-action">
-                    <p className="another-action__text">Don’t have an account?</p>
-                    <a href='/signup' className="another-action__link">Sign up</a>
+                    <p className="another-action__text">{I18n.t('signin.text')}</p>
+                    <a href='/signup' className="another-action__link">{I18n.t('signin.link')}</a>
                 </div>
             </React.Fragment>
         );
@@ -142,7 +145,7 @@ SignIn.propTypes = {
     signin: PropTypes.func,
     authorized: PropTypes.bool,
     error: PropTypes.object,
-    history: PropTypes.object
+    history: PropTypes.shape(historyPropTypes),
 };
 
 const mapStateToProps = (state) => ({

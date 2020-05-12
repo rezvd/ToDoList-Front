@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
+import { I18n } from "react-redux-i18n"
 
 import Task from '../../components/task/Task';
 import './style.css';
@@ -66,11 +67,11 @@ class Inbox extends React.Component {
                     onSubmit={this.onSubmit}>
                     <FormField value={this.state.value}
                                className="form__field"
-                               placeholder="Type your new task"
+                               placeholder={I18n.t('todo.create-placeholder')}
                                onChange={this.onChange}/>
                     <FormButton className="form__button"
                                 type="submit"
-                                value="Create"
+                                value={I18n.t('todo.create-button')}
                                 disabled={this.state.value === ''}/>
                 </form>
                 {this.renderList()}

@@ -1,11 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from "redux";
+import PropTypes from "prop-types";
+import { I18n } from "react-redux-i18n"
+
 import FormField from '../../components/form-field/FormField';
 import FormButton from '../../components/form-button/FormButton';
 import img from './images/login_logo.png';
 import './style.css';
-import PropTypes from "prop-types";
 import signUp from "../../actions/users/signUp";
 import Checkbox from "../../components/form-checkbox/Checkbox";
 
@@ -141,29 +143,29 @@ class SignUp extends React.Component {
                     <FormField value={this.state.email.value}
                                type="text"
                                className={`signup__field ${this.state.email.status}`}
-                               placeholder="E-mail"
+                               placeholder={I18n.t('form.email')}
                                onChange={this.onChangeEmail}
                                onBlur={this.onBlurEmail}/>
                     <FormField value={this.state.password.value}
                                type="password"
                                className={`signup__field  ${this.state.password.status}`}
-                               placeholder="Password"
+                               placeholder={I18n.t('form.password')}
                                onChange={this.onChangePassword}
                                onBlur={this.onBlurPassword}/>
                     <Checkbox className={`signup__checkbox ${this.state.checkbox.status}`}
                               checked={this.state.checkbox.checked}
-                              text={"I agree to processing of personal data"}
+                              text={I18n.t('signup.checkbox')}
                               disabled={this.state.checkbox.status === 'disabled'}
                               onChange={this.onCheckboxChange}/>
                     <FormButton className="signup__button"
                                 type="submit"
-                                value="Sign Up"
+                                value={I18n.t('signup.button')}
                                 disabled={!this.isPasswordValid() || !this.isEmailValid() ||
                                     !this.state.checkbox.checked}/>
                 </form>
                 <div className="another-action">
-                    <p className="another-action__text">Already have an account?</p>
-                    <a href='/signin' className="another-action__link">Log in</a>
+                    <p className="another-action__text">{I18n.t('signup.text')}</p>
+                    <a href='/signin' className="another-action__link">{I18n.t('signup.link')}</a>
                 </div>
             </React.Fragment>
         );
