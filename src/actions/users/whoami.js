@@ -14,6 +14,7 @@ export default function whoami() {
                 });
             })
             .catch(error => {
+                localStorage.removeItem('jwt');
                 dispatch({
                     type: types.AUTHENTICATE_ERROR,
                     error: error
