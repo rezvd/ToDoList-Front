@@ -135,13 +135,14 @@ class SignIn extends React.Component {
                 </div>
             </React.Fragment>
         );
-    };
+    }
 }
 
 SignIn.propTypes = {
     signin: PropTypes.func,
     authorized: PropTypes.bool,
-    error: PropTypes.object
+    error: PropTypes.object,
+    history: PropTypes.object
 };
 
 const mapStateToProps = (state) => ({

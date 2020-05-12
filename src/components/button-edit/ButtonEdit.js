@@ -11,8 +11,8 @@ export default class ButtonEdit extends React.Component {
         return (
             <div className={`button-edit ${this.props.className}`} onClick={this.handleClickOnButton}></div>
         );
-    };
-};
+    }
+}
 
 
 ButtonEdit.propTypes = {

@@ -52,7 +52,7 @@ class SignUp extends React.Component {
     }
 
     isEmailValid(email = this.state.email.value) {
-        let pattern = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+        let pattern = /^[\w-.]+@[\w-]+\.[a-z]{2,4}$/i;
         return pattern.test(email);
         //return email.length >= 3;
     }
@@ -167,13 +167,14 @@ class SignUp extends React.Component {
                 </div>
             </React.Fragment>
         );
-    };
+    }
 }
 
 SignUp.propTypes = {
     signup: PropTypes.func,
     authorized: PropTypes.bool,
-    error: PropTypes.object
+    error: PropTypes.object,
+    history: PropTypes.object
 };
 
 const mapStateToProps = (state) => ({

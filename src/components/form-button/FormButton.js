@@ -16,8 +16,8 @@ export default class FormButton extends React.Component {
                 {value}
             </button>
         );
-    };
-};
+    }
+}
 
 FormButton.propTypes = {
     className: PropTypes.string,

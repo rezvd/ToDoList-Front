@@ -76,7 +76,7 @@ class Inbox extends React.Component {
                 {this.renderList()}
             </React.Fragment>
         );
-    };
+    }
 }
 
 Inbox.propTypes = {
@@ -84,7 +84,8 @@ Inbox.propTypes = {
     getTasks: PropTypes.func,
     createTask: PropTypes.func,
     whoami: PropTypes.func,
-    authorized: PropTypes.bool
+    authorized: PropTypes.bool,
+    history: PropTypes.object
 };
 
 const mapStateToProps = (state) => ({

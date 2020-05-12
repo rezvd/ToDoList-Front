@@ -30,8 +30,8 @@ export default class SideBar extends React.Component {
           </ul>
       </aside>
     );
-  };
-};
+  }
+}
 
 SideBar.propTypes = {
   className: PropTypes.string

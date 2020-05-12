@@ -44,14 +44,16 @@ class Task extends React.Component {
                 </div>
             </div>
         );
-    };
+    }
 }
 
 Task.propTypes = {
     name: PropTypes.string,
     status: PropTypes.string,
     id: PropTypes.string,
-    update: PropTypes.func
+    update: PropTypes.func,
+    deleteTask: PropTypes.func,
+    updateTasks: PropTypes.func
 };
 
 Task.defaultProps = {
@@ -61,7 +63,7 @@ Task.defaultProps = {
 };
 
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = () => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({

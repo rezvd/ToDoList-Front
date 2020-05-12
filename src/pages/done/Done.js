@@ -40,13 +40,15 @@ class Done extends React.Component {
                 {this.renderList()}
             </React.Fragment>
         );
-    };
+    }
 }
 
 Done.propTypes = {
     tasks: PropTypes.array,
     getTasks: PropTypes.func,
     whoami: PropTypes.func,
+    authorized: PropTypes.bool,
+    history: PropTypes.object
 };
 
 const mapStateToProps = (state) => ({

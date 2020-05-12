@@ -19,8 +19,8 @@ export default class Checkbox extends React.Component {
                 {text}
             </label>
         );
-    };
-};
+    }
+}
 
 Checkbox.propTypes = {
     className: PropTypes.string,

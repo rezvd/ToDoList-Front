@@ -14,8 +14,8 @@ export default class LoginLayout extends React.Component {
         </main>
       </React.Fragment>
     );
-  };
-};
+  }
+}
 
 LoginLayout.propTypes = {
   children: PropTypes.node.isRequired

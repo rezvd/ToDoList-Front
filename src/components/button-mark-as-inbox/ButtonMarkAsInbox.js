@@ -9,8 +9,8 @@ export default class ButtonMarkAsInbox extends React.Component {
     return (
         <div className={`button-mark-as-inbox ${this.props.className}`} onClick={this.props.onClick}></div>
     );
-  };
-};
+  }
+}
 
 ButtonMarkAsInbox.propTypes = {
     id: PropTypes.string,

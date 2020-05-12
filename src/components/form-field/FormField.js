@@ -19,8 +19,8 @@ export default class FormField extends React.Component {
                 onBlur={onBlur}
             />
         );
-    };
-};
+    }
+}
 
 FormField.propTypes = {
     className: PropTypes.string,
