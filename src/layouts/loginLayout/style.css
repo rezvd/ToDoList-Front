@@ -1,0 +1,15 @@
+.login {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background: url(images/mountains.png) repeat-x bottom;
+}
+
+.login__content {
+    margin: 14vh auto;
+    height: 357px;
+    width: 300px;
+    box-sizing: border-box;
+    padding: 0;
+    background: none;
+}

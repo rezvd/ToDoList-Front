@@ -1,0 +1,19 @@
+.form-button {
+    border-radius: 17px;
+    border: none;
+    font-size: 15px;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    padding: 8px 25px;
+    box-sizing: border-box;
+    background-color: #50d5ad;
+}
+
+.form-button:disabled {
+    background-color: #bdbdbd;
+}
+
+.form-button:enabled:hover{
+    background-color: #3fc19f;
+}

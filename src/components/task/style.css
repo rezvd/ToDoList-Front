@@ -1,0 +1,48 @@
+.task {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border: 0.25px solid transparent;
+    padding: 18px 35px 13px;
+    margin: 0 0 5px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.task__name {
+    font-size: 15px;
+    color: #303030;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    padding: 0;
+    margin: 0 0 0 10px;
+    display: inline-block;
+}
+
+.task:hover{
+    box-shadow: 0 1px 4px #97e3cc;
+    background-color: #ffffff;
+    border: 0.25px solid #97e3cc;
+}
+
+.Inbox-icon:before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background: url("../button-mark-as-done/images/circle.png") no-repeat;
+    padding-left: 10px;
+}
+
+.task__right {
+    visibility: hidden;
+}
+
+.task:hover .task__right {
+    visibility: visible;
+}
+
+
+.task__button-action {
+    margin: 0 0 0 20px;
+}

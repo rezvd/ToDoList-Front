@@ -1,0 +1,72 @@
+.side-bar {
+    width: 100%;
+}
+
+.side-bar__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 20px;
+}
+
+.menu__link {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 18px;
+    color: #979797;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    margin: 24px 0 0 0;
+    text-decoration: none;
+}
+
+.menu__link:hover {
+    color: #848484;
+}
+
+.Inbox-item:before {
+    content: " ";
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    background: url("./images/menu-icon.png") no-repeat 0 -21px;
+    margin-right: 6px;
+}
+
+.done-item:before {
+    content: "";
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    background: url("./images/menu-icon.png") no-repeat 0 0;
+    margin-right: 6px;
+}
+
+.Inbox-item_active:before {
+    content: "";
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    background: url("./images/menu-icon.png") no-repeat -20px -21px;
+    margin-right: 6px;
+}
+
+.done-item_active:before {
+    content: "";
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    background: url("./images/menu-icon.png") no-repeat -20px 0;
+    margin-right: 6px;
+}
+
+.Inbox-item_active, .done-item_active {
+    font-size: 18px;
+    color: #78c2f5;
+    font-weight: 500;
+}
+
+
+.Inbox-item_active:hover, .done-item_active:hover {
+    color: #78c2f5;
+}

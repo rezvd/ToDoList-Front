@@ -1,0 +1,10 @@
+.button-delete {
+    background: url("./images/delete.png") 0 0;
+    width: 11px;
+    height: 14px;
+    display: inline-block;
+}
+
+.button-delete:hover {
+    background-position: -11px 0;
+}

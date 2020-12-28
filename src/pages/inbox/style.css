@@ -1,0 +1,12 @@
+.form{
+    margin: 0 0 14px 0;
+}
+
+.form__button:before{
+    content: "";
+    width: 13px;
+    height: 13px;
+    background: url("./images/create.png");
+    display: inline-block;
+    margin-right: 5px;
+}

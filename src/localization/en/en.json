@@ -1,0 +1,27 @@
+{
+  "sidebar": {
+    "todo": "To do",
+    "done": "Done"
+  },
+  "todo": {
+    "create-button": "Create",
+    "create-placeholder": "Type your new task"
+
+  },
+  "form": {
+    "email": "E-mail",
+    "password": "Password"
+  },
+  "signin": {
+    "button": "Log in",
+    "text": "Don't have an account?",
+    "link": "Sign up"
+  },
+  "signup": {
+    "button": "Sign up",
+    "checkbox": "I agree to processing of personal data",
+    "text": "Already have an account?",
+    "link": "Log in"
+  }
+}
+

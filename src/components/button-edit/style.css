@@ -1,0 +1,11 @@
+.button-edit {
+    background: url("./images/edit.png") 0 0;
+    width: 15px;
+    height: 14px;
+    display: inline-block;
+    margin: 0 0 0 20px;
+}
+
+.button-edit:hover {
+    background-position: -15px 0;
+}
